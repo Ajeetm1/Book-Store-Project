@@ -94,7 +94,7 @@ const PlaceOrder = async () => {
               <img
                 src={items.url}
                 alt={items.title}
-                className="h-[25vh] md:h-[25vh] object-cover hover:scale-150 hover:border-2 hover:border-blue-500 "
+                className="h-[25vh] md:h-[25vh] object-cover hover:scale-125 hover:border-2 hover:border-blue-100 transition-transform duration-300 ease-linear "
               />
 
               <div className="w-full md:w-auto">

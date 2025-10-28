@@ -4,6 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { authActions } from "../store/auth";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { ToastContainer,toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
   const [Value, setValue] = useState({
@@ -28,6 +31,11 @@ const Login = () => {
           "http://localhost:5000/api/v1/sign-in",
           Value
         );
+         toast.success("Login Successful!", {
+        position: "top-left",
+        autoClose: 1000,
+        className:"toast-message"
+      });
         console.log("Submit called");
         if (!response || !response.data) {
           throw new Error("Invalid response from server");
@@ -42,7 +50,9 @@ const Login = () => {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("role", response.data.role);
        
+       setTimeout(() => {
         navigate("/profile");
+      }, 1000);
       }
     } catch (error) {
       console.error("Login error:", error); 
@@ -55,6 +65,7 @@ const Login = () => {
   };
   return (
     <section className="bg-white ">
+      <ToastContainer/>
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <div className="w-full bg-blue-300 rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:border-gray-400">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -130,8 +141,10 @@ const Login = () => {
                 className="w-full text-white hover:bg-primary-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 "
                 
               >
+                
                 Sign in
               </button>
+              
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                 Don't have an account yet?{" "}
                 <a
