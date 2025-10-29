@@ -51,7 +51,7 @@ const Login = () => {
         localStorage.setItem("role", response.data.role);
        
        setTimeout(() => {
-        navigate("/profile");
+        navigate("/");
       }, 1000);
       }
     } catch (error) {
