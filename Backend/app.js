@@ -19,16 +19,19 @@ app.use("/api/v1/",Book)
 app.use("/api/v1/",Favourate)
 app.use("/api/v1/",Cart)
 app.use("/api/v1/",Orders)
+app.use("/", (req, res) => {
+  res.send("✅ Backend running successfully!");
+});
 
 app.use((req, res) => {
     res.status(404).json({ message: "Route not found" });
 });
-module.exports = app;
+
 // port creating
-if (require.main === module) {
-  const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => {
-    console.log(`Server running locally on http://localhost:${PORT}`);
-  });
-}
+// app.listen(process.env.PORT,()=>{
+//     console.log(`Server running on http://localhost:${process.env.PORT}`)
+
+// });
+
+export default app;
 
