@@ -3,6 +3,7 @@ import Loader from '../components/LoaderForGrid/Loader';
 import BookCard from '../components/BookinCard/BookCard';
 import axios from 'axios';
 import { useState,useEffect } from 'react';
+const API = import.meta.env.VITE_API_BASE_URL;
 
 
 
@@ -11,9 +12,7 @@ import { useState,useEffect } from 'react';
    const [Books, setBooks] = useState(null);
   useEffect(() => {
     const fetch = async () => {
-      const response = await axios.get(
-        "http://localhost:5000/api/v1/get-all-books"
-      );
+      const response = await axios.get(`${API}/get-all-books`)
       setBooks(response.data.data);
     };
     fetch();
