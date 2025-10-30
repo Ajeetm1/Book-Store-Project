@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "./store/auth";
 import Favourites from "./components/profile/Favourites";
 import Orderhistory from "./components/profile/Orderhistory";
-import Settings from "./components/profile/settings";
+import Settings from "./components/profile/Settings";
 import AllOrders from "./pages/AllOrders";
 import AddBooks from "./pages/AddBooks";
 import UpdateBooks from "./pages/UpdateBooks";
