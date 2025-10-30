@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import Loader from '../components/LoaderForGrid/Loader';
 import MobileNav from '../components/profile/MobileNav';
+const API = import.meta.env.VITE_API_BASE_URL;
 
  const Profile = () => {
 //  const isloggedIn =  useSelector();
@@ -16,7 +17,7 @@ const [profile,setprofile]=useState(null);
 //  console.log(headers)
   useEffect(()=>{
     const fetch = async()=>{
-      const Response = await axios.get("http://localhost:5000/api/v1/userInformation",{headers})
+      const Response = await axios.get(`${API}/userInformation`,{headers})
       setprofile(Response.data.data)
       // console.log(Response.data.data)
      

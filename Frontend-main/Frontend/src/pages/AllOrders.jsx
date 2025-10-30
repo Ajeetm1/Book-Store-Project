@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { FaCheck } from "react-icons/fa";
 import { FcFinePrint } from "react-icons/fc";
 import SeeingUserData from "./SeeingUserData";
+const API = import.meta.env.VITE_API_BASE_URL;
 
 const AllOrders = () => {
   const [AllOrders, setAllOrders] = useState();
@@ -21,7 +22,7 @@ const AllOrders = () => {
   useEffect(() => {
     const fetch = async () => {
       const response = await axios.get(
-        `http://localhost:5000/api/v1/get-all-orders`,
+        `${API}/get-all-orders`,
         { headers }
       );
       setAllOrders(response.data.data);
@@ -38,7 +39,7 @@ const AllOrders = () => {
     const id = AllOrders[i]._id;
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/v1/update-status/${id}`,
+        `${API}/update-status/${id}`,
         Values,
         { headers }
       );

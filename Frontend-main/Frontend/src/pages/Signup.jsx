@@ -4,6 +4,7 @@ import axios from "axios";
 import { FaUserTie } from "react-icons/fa6";
 import { ToastContainer,toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
+const API = import.meta.env.VITE_API_BASE_URL;
 
 const Signup = () => {
   const [Value,setValue]=useState({
@@ -25,7 +26,7 @@ const Signup = () => {
 
            else{
             
-            const response = await axios.post("http://localhost:5000/api/v1/sign-up",Value)
+            const response = await axios.post(`${API}/sign-up`,Value)
             console.log(response)
             alert(response.data.message);
             navigate("/Login")

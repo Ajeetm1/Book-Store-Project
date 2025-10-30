@@ -6,6 +6,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { ToastContainer,toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+const API = import.meta.env.VITE_API_BASE_URL;
 
 
 const Login = () => {
@@ -28,7 +29,7 @@ const Login = () => {
         alert("All fields are required");
       } else {
         const response = await axios.post(
-          "http://localhost:5000/api/v1/sign-in",
+          `${API}/sign-in`,
           Value
         );
          toast.success("Login Successful!", {

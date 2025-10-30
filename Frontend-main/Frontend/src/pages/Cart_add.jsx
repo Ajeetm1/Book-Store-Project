@@ -4,6 +4,7 @@ import Loader from "../components/LoaderForGrid/Loader"
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
 import cart_empty from '../images/cart_empty.png';
+const API = import.meta.env.VITE_API_BASE_URL;
 
 const Cart = () => {
   const Navigate = useNavigate();
@@ -18,7 +19,7 @@ const Cart = () => {
 
   useEffect(() => {
     const fetch = async () => {      
-        const Response = await axios.get("http://localhost:5000/api/v1/get-user-cart", {headers});
+        const Response = await axios.get(`${API}/get-user-cart`, {headers});
         // console.log(Response.data.data)
         setCart(Response.data.data);
        
@@ -27,7 +28,7 @@ const Cart = () => {
     fetch();
   }, []);
   const deleteItem = async(bookid)=>{
-    const response = await axios.put(`http://localhost:5000/api/v1/remove-to-cart/${bookid}`,{},{headers}      
+    const response = await axios.put(`${API}/remove-to-cart/${bookid}`,{},{headers}      
     );
     alert(response.data.message);
   }
@@ -51,7 +52,7 @@ const Cart = () => {
 
 const PlaceOrder = async () => { 
   try  {   
-        const Response = await axios.post(`http://localhost:5000/api/v1/place-order`, {orders:cart},{headers});
+        const Response = await axios.post(`${API}/place-order`, {orders:cart},{headers});
         alert(Response.data.message);
         Navigate("/profile/orderHistory");
   } catch(error){

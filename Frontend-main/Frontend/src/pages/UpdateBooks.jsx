@@ -2,6 +2,7 @@ import React from 'react'
 import { useState,useEffect } from 'react';
 import { useParams,useNavigate } from 'react-router-dom';
 import axios from 'axios';
+const API = import.meta.env.VITE_API_BASE_URL;
 
 
  const UpdateBooks = () => {
@@ -39,7 +40,7 @@ const headers = {
         alert("All fields are required");
       } else {
         const response = await axios.put(
-          "http://localhost:5000/api/v1/update-books",Data,
+         `${API}/update-books`,Data,
           { headers }
         );
 
@@ -66,7 +67,7 @@ const headers = {
 useEffect(() => {
     const fetch = async () => {
       const response = await axios.get(
-        `http://localhost:5000/api/v1/get-book-by-id/${id}`
+        `${API}/get-book-by-id/${id}`
       );
       // console.log(response.data.data);
       setData(response.data.data);
