@@ -20,7 +20,7 @@ app.use("/api/v1/",Favourate)
 app.use("/api/v1/",Cart)
 app.use("/api/v1/",Orders)
 app.use("/", (req, res) => {
-  res.send("✅ Backend running successfully!");
+  res.send("Backend running successfully!");
 });
 
 app.use((req, res) => {
@@ -34,4 +34,9 @@ app.use((req, res) => {
 // });
 
 export default app;
+
+
+
+// for checking book on versel
+// https://book-store-project-96aq1qhb2-ajeetm1s-projects.vercel.app/api/v1/get-all-books
 
