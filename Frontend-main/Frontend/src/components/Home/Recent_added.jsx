@@ -3,13 +3,14 @@ import { useState } from "react";
 import axios from "axios";
 import BookCard from "../BookinCard/BookCard";
 import Loader from "../LoaderForGrid/Loader";
+const API = import.meta.env.VITE_API_BASE_URL;
 
 const Recent_added = () => {
   const [Books, setBooks] = useState(null);
   useEffect(() => {
     const fetch = async () => {
       const response = await axios.get(
-        "http://localhost:5000/api/v1/get-recent-books"
+        `${API}/get-recent-books`
       );
       setBooks(response.data.data);
     };
