@@ -31,7 +31,9 @@ const Cart = () => {
     const response = await axios.put(`${API}/remove-to-cart/${bookid}`,{},{headers}      
     );
     alert(response.data.message);
+    setCart(cart.filter((item) => item._id !== bookid));
   }
+
   useEffect(() => {
   if (cart && cart.length > 0) {
     let total = 0;
