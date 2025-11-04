@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Favourites from "../profile/Favourites";
-
+const API =import.meta.env.VITE_API_BASE_URL;
 const BookCard = ({ data, Favourites }) => {
   const headers = {
     id: localStorage.getItem("id"),
@@ -11,7 +11,7 @@ const BookCard = ({ data, Favourites }) => {
 
   const handleRemoveBook = async () => {
     const response = await axios.put(
-      "http://localhost:5000/api/v1/favourite-book-removed",
+     `${API}/favourite-book-removed`,
       {},
       { headers }
     );

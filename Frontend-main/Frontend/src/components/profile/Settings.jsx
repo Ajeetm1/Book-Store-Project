@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import Loader from "../LoaderForGrid/Loader";
+const API =import.meta.env.VITE_API_BASE_URL;
 
 const Settings = () => {
   const [Value, setValue] = useState({ address: "" });
@@ -19,7 +20,7 @@ const Settings = () => {
   useEffect(() => {
     const fetch = async () => {
       const Response = await axios.get(
-        "http://localhost:5000/api/v1/userInformation",
+       `${API}/userInformation`,
         { headers }
       );
       setProfileData(Response.data.data);
@@ -29,7 +30,7 @@ const Settings = () => {
   }, []);
 const submitAddress = async()=>{
   const responnse = await axios.put(
-        "http://localhost:5000/api/v1/update-address",Value,
+        `${API}/update-address`,Value,
         { headers }
       );
       console.log(responnse.data.message)

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Loader from "../LoaderForGrid/Loader";
 import { Link } from "react-router-dom";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+const API =import.meta.env.VITE_API_BASE_URL;
 
 const Orderhistory = () => {
   const [Orderhistory, setOrderHistory] = useState([]);
@@ -14,7 +15,7 @@ const Orderhistory = () => {
   useEffect(() => {
     const fetch = async () => {
       const Response = await axios.get(
-        "http://localhost:5000/api/v1/get-order-history",
+       `${API}/get-order-history`,
         { headers }
       );
       console.log(Response.data.data);
@@ -25,7 +26,7 @@ const Orderhistory = () => {
 
   const removeBook = async(bookid)=>{
     try{
-        const response = await axios.put(`http://localhost:5000/api/v1/remove-cancel-order/${bookid}`,{},{headers}      
+        const response = await axios.put(`${API}/remove-cancel-order/${bookid}`,{},{headers}      
     );
     alert(response.data.message);
      setOrderHistory((prev) => prev.filter((order) => order._id !== bookid));
