@@ -8,6 +8,7 @@ import { FaCartPlus } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import { FaEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
+const API = import.meta.env.VITE_API_BASE_URL;
 
 const ViewBookPage = () => {
   const { id } = useParams();
@@ -20,7 +21,7 @@ const ViewBookPage = () => {
   useEffect(() => {
     const fetch = async () => {
       const response = await axios.get(
-        `http://localhost:5000/api/v1/get-book-by-id/${id}`
+        `${API}/get-book-by-id/${id}`
       );
       // console.log(response.data.data);
       setBooks(response.data.data);
@@ -33,14 +34,14 @@ const ViewBookPage = () => {
    
   }
   const handleFavourite = async ()=>{
-    const response = await axios.put("http://localhost:5000/api/v1/favourite-book",{},{headers}
+    const response = await axios.put(`${API}/favourite-book`,{},{headers}
 
     )
     alert(response.data.message);
   };
   // cart...
   const handleCart = async ()=>{
-    const response= await axios.put("http://localhost:5000/api/v1/add-to-cart",{},{headers})
+    const response= await axios.put(`${API}/add-to-cart`,{},{headers})
     alert(response.data.message);
   };
   if (!Books) {
@@ -53,7 +54,7 @@ const ViewBookPage = () => {
   }
   const deletebook = async ()=>{
     if(window.confirm('Are you sure Delete this book!')){
-       const response = await axios.delete(`http://localhost:5000/api/v1/delete-books`,{headers})
+       const response = await axios.delete(`${API}/delete-books`,{headers})
    console.log(response)
    naviagate("/all-books")
     }
