@@ -44,7 +44,7 @@ const AllOrders = () => {
         { headers }
       );
       alert(response.data.message);
-      setOption(-1); // ✅ hide dropdown after update
+      setOption(-1); // hiding dropdown after updating.....
     } catch (error) {
       alert("Failed to update status");
     }
@@ -128,7 +128,7 @@ const AllOrders = () => {
                       className="hover:scale-105 transition-all duration-300"
                       onClick={() => {
                         setOption(i);
-                        setValues({ status: orders.status || "Order placed" }); // ✅ Set default safely
+                        setValues({ status: orders.status || "Order placed" }); //Set for  default safely...
                       }}
                     >
                       {orders.status === "Order placed" ? (

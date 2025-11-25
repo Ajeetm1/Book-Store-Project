@@ -27,7 +27,7 @@ const Sidebar = ({ data }) => {
         <p className="mt-3 text-normal text-zinc-100">{data.email}</p>
         <div className="w-full mt-4 h-[1px] bg-zinc-500 hidden lg:block"></div>
       </div>
-
+         {/* user role... */}
       {role === "user" && (
         <div className="w-full flex-col  items-center justify-center h lg:flex md:flex hidden">
           <Link

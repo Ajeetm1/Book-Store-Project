@@ -57,7 +57,7 @@ const Navbar = () => {
         <div className="nav-links-mybooks block md:flex items-center gap-4">
           <div className="hidden md:flex gap-4">
             {links.map((items, i) => (
-              // creating divs using key i
+              // creating divs using key i...
               <div className="flex items-center"key={i}>
                 {items.title === "Profile"  || items.title === "adminProfile" ? (
                   <Link
@@ -109,7 +109,7 @@ const Navbar = () => {
         className={`${Viewnav} bg-zinc-500 h-screen absolute  left-0 w-full z-40 flex flex-col items-center justify-center`}
       >
         {links.map((items, i) => (
-          // creating divs using key i
+          // creating divs using key i.....
           <Link
             to={items.link}
             className={`${Viewnav}font-semibold text-2xl  hover:text-blue-500 mb-4 transition-all duration-300`}

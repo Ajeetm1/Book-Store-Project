@@ -18,7 +18,7 @@ const BookCard = ({ data, Favourites }) => {
     alert(response.data.message);
   };
 
-    // ...existing code...
+    
     return (
       <div className="bg-white/90 dark:bg-slate-800 rounded-xl p-4 flex flex-col h-full min-w-[10rem] shadow-sm hover:shadow-md transition-shadow duration-200">
         <Link to={`/view-book-details/${data._id}`} className="group">
@@ -64,7 +64,7 @@ const BookCard = ({ data, Favourites }) => {
         )}
       </div>
     );
-  // ...existing code...
+
 };
 
 export default BookCard;
