@@ -8,7 +8,7 @@ import Loader from "../LoaderForGrid/Loader";
 
 
 const Recent_added = ({books}) => {
-  console.log("hello")
+  console.log(books)
   
  
   const item = {
