@@ -7,7 +7,7 @@ const API = import.meta.env.VITE_API_BASE_URL;
 console.log(API)
 
  const Home = () => {
-  const [books,setbooks] = useState(null)
+  const [books,setbooks] = useState([])
   console.log(books)
   useEffect(() => {
     const fetch = async () => {

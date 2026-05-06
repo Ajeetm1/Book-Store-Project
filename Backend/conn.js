@@ -15,4 +15,4 @@ const Conn =async () =>{
 
     
 }
-Conn();
+module.exports = Conn;

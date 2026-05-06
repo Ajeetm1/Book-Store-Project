@@ -4,7 +4,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-require("./conn")
+
+
 const cors  = require("cors")
 const user = require("./routes/user")
 const Book = require("./routes/book")
@@ -13,7 +14,13 @@ const Cart = require("./routes/cart")
 const Orders = require("./routes/orders")
 
 
-app.use(cors());
+app.use(cors({
+    origin: [
+      "http://localhost:5173",
+      "https://book-store-project-weld.vercel.app",
+    ],
+    credentials: true,
+  }));
 // routes
 app.use("/api/v1",user)
 app.use("/api/v1/",Book)
