@@ -1,8 +1,9 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-require("dotenv").config();
+
 require("./conn")
 const cors  = require("cors")
 const user = require("./routes/user")
@@ -27,13 +28,13 @@ app.use((req, res) => {
     res.status(404).json({ message: "Route not found" });
 });
 
-// port creating
+// // port creating
 // app.listen(process.env.PORT,()=>{
 //     console.log(`Server running on http://localhost:${process.env.PORT}`)
 
 // });
+module.exports = app;
 
-export default app;
 
 
 

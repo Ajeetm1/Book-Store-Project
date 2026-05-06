@@ -26,7 +26,7 @@ const API = import.meta.env.VITE_API_BASE_URL;
       <Loader/>{" "}
       </div>
       )}
-      <div className="my-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 min-w-[15rem] bg-green-400 p-2">
+      <div className="my-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 min-w-[15rem] bg-purple-400 p-2">
        {Books &&
   Books.map((items, i) => {
     const originalPrice = parseFloat(items.price);
