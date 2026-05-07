@@ -18,6 +18,7 @@ app.use(cors({
     origin: [
       "http://localhost:5173",
       "https://book-store-project-weld.vercel.app",
+       "https://book-store-project-ui.vercel.app"
     ],
     credentials: true,
   }));
