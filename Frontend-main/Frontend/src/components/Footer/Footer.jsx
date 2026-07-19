@@ -1,85 +1,122 @@
-import React from 'react'
+import React from 'react';
 import { IoBookSharp } from "react-icons/io5";
-import { FaGithub } from "react-icons/fa6";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa6";
+import { FaGithub, FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa6";
 
- const Footer = () => {
+const Footer = () => {
   return (
-   
+    <footer className="bg-zinc-950 text-zinc-300 border-t border-purple-900/40">
+      <div className="mx-auto w-full max-w-screen-xl p-6 py-8 lg:py-12">
+        
+        {/* Main Grid Structure */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">
+          
+          {/* Brand/Logo Section */}
+          <div className="md:col-span-1 space-y-4">
+            <a href="/" className="flex items-center gap-2 group">
+              <div className="bg-purple-600 p-2 rounded-lg text-xl text-white shadow-lg shadow-purple-600/30 transition-transform group-hover:scale-105">
+                <IoBookSharp />
+              </div>
+              <span className="self-center text-2xl font-bold tracking-tight text-white">
+                My<span className="text-purple-500">Book</span>House
+              </span>
+            </a>
+            <p className="text-sm text-zinc-400 max-w-xs leading-relaxed">
+              Your ultimate destination for discovering, reading, and sharing your favorite books online.
+            </p>
+          </div>
 
-<footer className="bg-black ">
-    <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8 z-100 ">
-        <div className="md:flex md:justify-between">
-          <div className="mb-6 md:mb-0">
-            
-              <a href="/" className="flex items-center">
-                 <div className='bg-white h-auto w-7 justify-center flex mr-2 text-3xl text-blue-600'><IoBookSharp /></div>
-                  <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">MyBookHouse</span>
-              </a>
+          {/* Links Sections */}
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 md:col-span-3">
+            {/* Explore Column */}
+            <div>
+              <h2 className="mb-4 text-xs font-bold text-purple-400 uppercase tracking-widest">
+                Explore
+              </h2>
+              <ul className="space-y-2.5 text-sm font-medium">
+                <li>
+                  <a href="/genres" className="hover:text-white transition-colors">All Genres</a>
+                </li>
+                <li>
+                  <a href="/best-sellers" className="hover:text-white transition-colors">Best Sellers</a>
+                </li>
+                <li>
+                  <a href="/new-releases" className="hover:text-white transition-colors">New Releases</a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Platform Column */}
+            <div>
+              <h2 className="mb-4 text-xs font-bold text-purple-400 uppercase tracking-widest">
+                Platform
+              </h2>
+              <ul className="space-y-2.5 text-sm font-medium">
+                <li>
+                  <a href="/authors" className="hover:text-white transition-colors">Our Authors</a>
+                </li>
+                <li>
+                  <a href="/membership" className="hover:text-white transition-colors">Membership</a>
+                </li>
+                <li>
+                  <a href="/blog" className="hover:text-white transition-colors">Book Blog</a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Legal Column */}
+            <div className="col-span-2 sm:col-span-1">
+              <h2 className="mb-4 text-xs font-bold text-purple-400 uppercase tracking-widest">
+                Legal
+              </h2>
+              <ul className="space-y-2.5 text-sm font-medium">
+                <li>
+                  <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="/terms" className="hover:text-white transition-colors">Terms &amp; Conditions</a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-              <div>
-                  <h2 className="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Resources</h2>
-                  <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                      <li className="mb-4">
-                          <a href="/" className="hover:underline">JS Store</a>
-                      </li>
-                      <li>
-                          <a href="https://tailwindcss.com/" className="hover:underline">Department Store</a>
-                      </li>
-                  </ul>
-              </div>
-              <div>
-                  <h2 className="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Follow us</h2>
-                  <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                      <li className="mb-4">
-                          <a href="https://github.com/themesberg/flowbite" className="hover:underline ">Github</a>
-                      </li>
-                      <li>
-                          <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">Discord</a>
-                      </li>
-                  </ul>
-              </div>
-              <div>
-                  <h2 className="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Legal</h2>
-                  <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                      <li className="mb-4">
-                          <a href="#" className="hover:underline">Privacy Policy</a>
-                      </li>
-                      <li>
-                          <a href="#" className="hover:underline">Terms &amp; Conditions</a>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-      <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-      <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-white sm:text-center dark:text-gray-400">© 2025 <a href="https://BookHouse.com/" className="hover:underline">BookHouse™</a>. All Rights Reserved.
+
+        </div>
+
+        {/* Divider Line */}
+        <hr className="my-8 border-zinc-800 lg:my-10" />
+
+        {/* Bottom Bar */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <span className="text-sm text-zinc-500 order-2 sm:order-1">
+            © {new Date().getFullYear()}{" "}
+            <a href="/" className="hover:underline text-zinc-400">
+              MyBookHouse™
+            </a>
+            . All Rights Reserved.
           </span>
-          <div className="flex mt-4 sm:justify-center sm:mt-0">
-              <a href="#" className="text-gray-500 hover:text-green-300 dark:hover:text-white">
-                 <FaFacebookSquare />
-                  <span className="sr-only">Facebook page</span>
-              </a>
 
-              <a href="#" className="text-gray-500 hover:text-green-300 dark:hover:text-white ms-5">
-                 <FaLinkedin />
-
-                  <span className="sr-only">Discord community</span>
-              </a>
-             
-              <a href="#" className="text-zinc-500 hover:text-green-300 dark:hover:text-white ms-5">
-                  <FaGithub />
-                  <span className="sr-only">GitHub account</span>
-              </a>
-              
+          {/* Social Icons with Premium Purple Hover effect */}
+          <div className="flex space-x-5 order-1 sm:order-2 text-xl text-zinc-400">
+            <a href="#" className="hover:text-purple-500 transition-colors" aria-label="Facebook">
+              <FaFacebook />
+            </a>
+            <a href="#" className="hover:text-purple-400 transition-colors" aria-label="Instagram">
+              <FaInstagram />
+            </a>
+            <a href="#" className="hover:text-purple-400 transition-colors" aria-label="Twitter">
+              <FaTwitter />
+            </a>
+            <a href="#" className="hover:text-purple-500 transition-colors" aria-label="LinkedIn">
+              <FaLinkedin />
+            </a>
+            <a href="#" className="hover:text-purple-500 transition-colors" aria-label="GitHub">
+              <FaGithub />
+            </a>
           </div>
-      </div>
-    </div>
-</footer>
+        </div>
 
-  )
-}
+      </div>
+    </footer>
+  );
+};
+
 export default Footer;

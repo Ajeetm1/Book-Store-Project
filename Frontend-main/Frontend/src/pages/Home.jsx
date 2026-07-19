@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Hero from '../components/Home/Hero';
 import axios from 'axios';
 import  Recent_added  from '../components/Home/Recent_added';
-import  Crausoul  from '../components/Home/Crausoul';
+import Carousel from '../components/Home/Carousel';
+import { CarouselHeaders } from '../components/Home/CarouselHeaders';
 const API = import.meta.env.VITE_API_BASE_URL;
 console.log(API)
 
@@ -18,9 +19,10 @@ console.log(API)
     fetch();
   }, []);
   return (
-    <div className="bg-white text-white px-10 py-8">
+    <div className="bg-white text-white px-0 py-0">
+    <CarouselHeaders/>
    <Hero/>
-   <Crausoul books={books}/>
+   <Carousel books={books}/>
    <Recent_added books={books}/>
     </div>
   )

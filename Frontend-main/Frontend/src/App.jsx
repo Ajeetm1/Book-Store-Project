@@ -17,40 +17,49 @@ import Settings from "./components/profile/Settings";
 import AllOrders from "./pages/AllOrders";
 import AddBooks from "./pages/AddBooks";
 import UpdateBooks from "./pages/UpdateBooks";
-
+import { TopBanner } from "./components/Navbar/TopBanner";
 
 const App = () => {
   const dispatch = useDispatch();
   const role = useSelector((state) => state.auth.role);
   useEffect(() => {
-    if (
-      localStorage.getItem("id") &&
-      localStorage.getItem("token") &&
-      localStorage.getItem("role")
-    ) {
+    const id  = localStorage.getItem("id") 
+    const token  =  localStorage.getItem("token") 
+    const role =   localStorage.getItem("role");
+    if (id && token && role) {
       dispatch(authActions.login());
-      dispatch(authActions.changeRole(localStorage.getItem("role")));
+      dispatch(authActions.changeRole(role));
+    }else{
+      // if missing logout
+      dispatch(authActions.logout())
     }
-  }, []);
+  }, [dispatch]);
   return (
     <div>
+      <TopBanner/>
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/all-books" element={<Allbooks />} />
-         <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/profile" element={<Profile />}>
-         {role === "user" ? (<Route index element={<Favourites/>}/>):(<Route index element={<AllOrders/>}/>)}
+          {role === "user" ? (
+            <Route index element={<Favourites />} />
+          ) : (
+            <Route index element={<AllOrders />} />
+          )}
 
-         {role === "admin" &&  (<Route path="/profile/add-book" element={<AddBooks/>}/>)}
+          {role === "admin" && (
+            <Route path="/profile/add-book" element={<AddBooks />} />
+          )}
 
           <Route path="/profile/orderhistory" element={<Orderhistory />} />
-          <Route path="/profile/settings" element={<Settings/>} />
+          <Route path="/profile/settings" element={<Settings />} />
         </Route>
-       
+
         <Route path="/Signup" element={<Signup />} />
         <Route path="/Login" element={<Login />} />
-         <Route path="/updateBook/:id" element={<UpdateBooks />} />
+        <Route path="/updateBook/:id" element={<UpdateBooks />} />
         <Route path="/view-book-details/:id" element={<ViewBookPage />} />
       </Routes>
       <Footer />

@@ -8,8 +8,8 @@ const Hero = () => {
   return (
      <div className="relative overflow-hidden flex flex-col md:flex-row items-center justify-center min-h-[80vh] px-6">
 
-      <div className="absolute w-[500px] h-[500px] bg-purple-500 opacity-20 blur-3xl rounded-full top-[-100px] left-[-100px] animate-pulse"></div>  
-      <div className="absolute w-[400px] h-[400px] bg-pink-500 opacity-20 blur-3xl rounded-full bottom-[-100px] right-[-100px] animate-pulse"></div>
+      <div className="absolute w-[500px] h-[500px] bg-white opacity-20 blur-3xl rounded-full top-[-100px] left-[-100px] animate-pulse"></div>  
+      <div className="absolute w-[400px] h-[400px] bg-white opacity-20 blur-3xl rounded-full bottom-[-100px] right-[-100px] animate-pulse"></div>
 
       
       <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left z-10">
@@ -50,14 +50,14 @@ const Hero = () => {
         <div className="relative group">
 
           
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 blur-2xl opacity-30 group-hover:opacity-50 transition duration-500 rounded-xl"></div>
+          <div className="absolute inset-0 blur-2xl opacity-30 group-hover:opacity-50 transition duration-500 rounded-xl"></div>
 
           
           <img
             src={image}
             alt="books"
             className="relative w-[300px] md:w-[400px] rounded-xl transition-all duration-500 
-            group-hover:scale-110 group-hover:rotate-1 shadow-xl"
+            group-hover:scale-110 group-hover:rotate-1"
           />
 
           

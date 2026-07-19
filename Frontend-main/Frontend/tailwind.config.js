@@ -8,10 +8,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: { "50": "#eff6ff", "100": "#dbeafe", "200": "#bfdbfe", "300": "#93c5fd", "400": "#60a5fa", "500": "#3b82f6", "600": "#2563eb", "700": "#1d4ed8", "800": "#1e40af", "900": "#1e3a8a", "950": "#172554" }
+        primary: { "50": "#eff6ff", "100": "#dbeafe", "200": "#bfdbfe", "300": "#93c5fd", "400": "#60a5fa", "500": "#3b82f6", "600": "#2563eb", "700": "#1d4ed8", "800": "#1e40af", "900": "#1e3a8a", "950": "#172554" },
+        secondryCarouselHeader:{
+           wpWhite: "#FFFFFF",
+        wpRed: "#cf2e2e",
+        wpOrange: "#ff6900",
+        wpAmber: "#fcb900",
+        wpBlue: "#0693e3",
+        wpPurple: "#9b51e0",
+        wpGray: "#39414D",
+        wpPink: "#fe2d2d", 
+        wpDarkPink: "#a01c1c", 
+        }
       },
       keyframes: {
-         gradient: {
+        gradient: {
           '0%, 100%': {
             'background-size': '200% 200%',
             'background-position': 'left center',
@@ -20,11 +31,16 @@ export default {
             'background-position': 'right center',
           },
         },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
       },
       animation: {
+        marquee:'marquee 25s linear infinite',
         gradient: 'gradient 4s ease infinite',
-         'gradient-slow': 'gradient 20s ease infinite',
-        
+        'gradient-slow': 'gradient 20s ease infinite',
+
       },
     },
     fontFamily: {
@@ -67,6 +83,6 @@ export default {
 
 
 
-plugins: [],
+  plugins: [],
 }
 
