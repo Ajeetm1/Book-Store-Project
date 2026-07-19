@@ -101,3 +101,70 @@ cp .env.example .env
 
 # Start the server
 npm start
+
+Book Store Project/
+├── Backend/
+│   ├── models/
+│   │   ├── books.js          # Book schema and model
+│   │   ├── users.js          # User schema and model
+│   │   └── orders.js         # Order schema and model
+│   ├── routes/
+│   │   ├── book.js           # Book operations endpoints
+│   │   ├── user.js           # User profile endpoints
+│   │   ├── auth.js           # Authentication endpoints (Updated)
+│   │   ├── cart.js           # Cart management endpoints
+│   │   ├── favorites.js      # Favorites endpoints (Updated)
+│   │   └── orders.js         # Order management endpoints
+│   ├── app.js                # Express app configuration
+│   ├── server.js             # Server entry point
+│   ├── conn.js               # Database connection
+│   └── package.json          # Dependencies
+│
+└── Frontend-main/Frontend/
+    ├── src/
+    │   ├── components/
+    │   │   ├── Home/          # Homepage components
+    │   │   ├── Navbar/        # Navigation components
+    │   │   ├── BookCard/      # Book card component (Updated naming)
+    │   │   ├── Profile/       # Profile-related components
+    │   │   └── Footer/        # Footer component
+    │   ├── pages/
+    │   │   ├── Home.jsx       # Home page
+    │   │   ├── Allbooks.jsx   # All books page
+    │   │   ├── Cart_add.jsx   # Shopping cart
+    │   │   ├── Profile.jsx    # User profile
+    │   │   ├── Login.jsx      # Login page
+    │   │   ├── Signup.jsx     # Registration page
+    │   │   ├── AddBooks.jsx   # Add book (admin)
+    │   │   ├── UpdateBooks.jsx# Update book (admin)
+    │   │   ├── AllOrders.jsx  # Orders page
+    │   │   └── Favourites.jsx # Favorites page
+    │   ├── store/
+    │   │   ├── index.js       # Redux store
+    │   │   └── auth.js        # Auth reducer
+    │   ├── App.jsx            # Root component
+    │   └── main.jsx           # Entry point
+    ├── tailwind.config.js     # Tailwind configuration
+    ├── vite.config.js         # Vite configuration
+    └── package.json           # Dependencies
+
+
+🚀 Quick Start
+Running Both Frontend and Backend
+Terminal 1 - Backend:
+
+Bash
+cd Backend
+npm start
+# Server running on http://localhost:5000
+Terminal 2 - Frontend:
+
+Bash
+cd Frontend-main/Frontend
+npm run dev
+# App running on http://localhost:5173
+Production Build
+Bash
+cd Frontend-main/Frontend
+npm run build
+    
