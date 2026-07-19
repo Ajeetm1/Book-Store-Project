@@ -1,4 +1,4 @@
-# 📚 Book Store - Full Stack E-Commerce Platform
+# Book Store - Full Stack E-Commerce Platform
 
 <div align="center">
 
@@ -19,37 +19,32 @@ A modern, feature-rich online bookstore platform built with React, Node.js, and 
 
 Book Store is a complete e-commerce solution for buying and selling books online. It provides a seamless user experience with modern UI/UX, secure authentication, and a robust backend API.
 
-**Live Demo:** [Insert Your Deployed Link Here - e.g., https://your-app.vercel.app]
+**Live Demo:** [Coming Soon]
 
 ---
 
 ## ✨ Features
 
 ### User Features
-- 🔐 **Secure Authentication** - User registration, login, and session management.
-- 📚 **Browse Books** - Filter and search through multiple book categories.
-- ❤️ **Favorites** - Save books to your favorites list.
-- 🛒 **Shopping Cart** - Add/remove items with real-time updates.
-- 💳 **Order Management** - View order history and track purchases.
-- 👤 **User Profile** - Update personal information and settings.
-- 📱 **Responsive Design** - Works perfectly on desktop, tablet, and mobile.
-
-### 🎨 UI Design Accent
-- **Premium Aesthetics** - Custom typography and color tokens adapted from high-fidelity Figma specifications.
-- **Modern Palette** - Featuring balanced dark/light mode accents like deep slates (`#0F172A`) and vivid brand oranges (`#F97316`).
-- **Dynamic Elements** - Interactive hero slider highlighting new arrivals and trending categories.
+- 🔐 **Secure Authentication** - User registration, login, and session management
+- 📚 **Browse Books** - Filter and search through multiple book categories
+- ❤️ **Favorites** - Save books to your favorites list
+- 🛒 **Shopping Cart** - Add/remove items with real-time updates
+- 💳 **Order Management** - View order history and track purchases
+- 👤 **User Profile** - Update personal information and settings
+- 📱 **Responsive Design** - Works perfectly on desktop, tablet, and mobile
 
 ### Admin Features
-- 📖 **Add/Update Books** - Manage book inventory.
-- 📊 **Order Management** - View and manage customer orders.
-- 👥 **User Management** - Monitor user activity.
+- 📖 **Add/Update Books** - Manage book inventory
+- 📊 **Order Management** - View and manage customer orders
+- 👥 **User Management** - Monitor user activity
 
 ### Technical Features
-- ⚡ **Fast Loading** - Optimized with Vite and React lazy loading.
-- 🎨 **Beautiful UI** - Tailwind CSS with custom components.
-- 🔄 **Real-time Updates** - Live cart and order status.
-- 📦 **State Management** - Redux for predictable state.
-- 🛡️ **Secure API** - JWT authentication and validation.
+- ⚡ **Fast Loading** - Optimized with Vite and React lazy loading
+- 🎨 **Beautiful UI** - Tailwind CSS with custom components
+- 🔄 **Real-time Updates** - Live cart and order status
+- 📦 **State Management** - Redux for predictable state
+- 🛡️ **Secure API** - JWT authentication and validation
 
 ---
 
@@ -82,10 +77,13 @@ Book Store is a complete e-commerce solution for buying and selling books online
 ### Clone the Repository
 
 ```bash
-git clone [https://github.com/](https://github.com/)[Your-Username]/book-store.git
+git clone https://github.com/yourusername/book-store.git
 cd book-store
-Backend Setup
-Bash
+```
+
+### Backend Setup
+
+```bash
 cd Backend
 
 # Install dependencies
@@ -101,7 +99,31 @@ cp .env.example .env
 
 # Start the server
 npm start
+```
 
+### Frontend Setup
+
+```bash
+cd Frontend-main/Frontend
+
+# Install dependencies
+npm install
+
+# Create .env file
+cp .env.example .env
+
+# Add your API endpoint
+# VITE_API_URL=http://localhost:5000
+
+# Start development server
+npm run dev
+```
+
+---
+
+## 📁 Project Structure
+
+```
 Book Store Project/
 ├── Backend/
 │   ├── models/
@@ -111,9 +133,9 @@ Book Store Project/
 │   ├── routes/
 │   │   ├── book.js           # Book operations endpoints
 │   │   ├── user.js           # User profile endpoints
-│   │   ├── auth.js           # Authentication endpoints (Updated)
+│   │   ├── userAuth.js       # Authentication endpoints
 │   │   ├── cart.js           # Cart management endpoints
-│   │   ├── favorites.js      # Favorites endpoints (Updated)
+│   │   ├── favourate.js      # Favorites endpoints
 │   │   └── orders.js         # Order management endpoints
 │   ├── app.js                # Express app configuration
 │   ├── server.js             # Server entry point
@@ -125,8 +147,8 @@ Book Store Project/
     │   ├── components/
     │   │   ├── Home/          # Homepage components
     │   │   ├── Navbar/        # Navigation components
-    │   │   ├── BookCard/      # Book card component (Updated naming)
-    │   │   ├── Profile/       # Profile-related components
+    │   │   ├── BookinCard/    # Book card component
+    │   │   ├── profile/       # Profile-related components
     │   │   └── Footer/        # Footer component
     │   ├── pages/
     │   │   ├── Home.jsx       # Home page
@@ -147,24 +169,293 @@ Book Store Project/
     ├── tailwind.config.js     # Tailwind configuration
     ├── vite.config.js         # Vite configuration
     └── package.json           # Dependencies
+```
 
+---
 
-🚀 Quick Start
-Running Both Frontend and Backend
-Terminal 1 - Backend:
+## 🚀 Quick Start
 
-Bash
+### Running Both Frontend and Backend
+
+**Terminal 1 - Backend:**
+```bash
 cd Backend
 npm start
 # Server running on http://localhost:5000
-Terminal 2 - Frontend:
+```
 
-Bash
+**Terminal 2 - Frontend:**
+```bash
 cd Frontend-main/Frontend
 npm run dev
 # App running on http://localhost:5173
-Production Build
-Bash
-cd Frontend-main/Frontend
+```
+
+### Development Build
+```bash
 npm run build
-    
+```
+
+### Production Build
+```bash
+npm run build:prod
+```
+
+---
+
+## 🔌 API Documentation
+
+### Base URL
+```
+http://localhost:5000/api
+```
+
+### Authentication Endpoints
+
+#### Sign Up
+```http
+POST /auth/signup
+Content-Type: application/json
+
+{
+  "username": "john_doe",
+  "email": "john@example.com",
+  "password": "password123"
+}
+```
+
+#### Login
+```http
+POST /auth/login
+Content-Type: application/json
+
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+```
+
+### Book Endpoints
+
+#### Get All Books
+```http
+GET /books?category=fiction&limit=10&page=1
+```
+
+#### Get Single Book
+```http
+GET /books/:id
+```
+
+#### Add Book (Admin)
+```http
+POST /books
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "category": "Fiction",
+  "price": 299,
+  "description": "...",
+  "imageUrl": "..."
+}
+```
+
+#### Update Book
+```http
+PUT /books/:id
+Authorization: Bearer <token>
+```
+
+#### Delete Book
+```http
+DELETE /books/:id
+Authorization: Bearer <token>
+```
+
+### Cart Endpoints
+
+#### Add to Cart
+```http
+POST /cart/add
+Authorization: Bearer <token>
+```
+
+#### Get Cart
+```http
+GET /cart
+Authorization: Bearer <token>
+```
+
+#### Remove from Cart
+```http
+DELETE /cart/:bookId
+Authorization: Bearer <token>
+```
+
+### Order Endpoints
+
+#### Create Order
+```http
+POST /orders
+Authorization: Bearer <token>
+```
+
+#### Get Order History
+```http
+GET /orders/history
+Authorization: Bearer <token>
+```
+
+### Favorites Endpoints
+
+#### Add to Favorites
+```http
+POST /favorites/add
+Authorization: Bearer <token>
+```
+
+#### Get Favorites
+```http
+GET /favorites
+Authorization: Bearer <token>
+```
+
+---
+
+## 🎨 Key Components
+
+### HomePage
+Interactive carousel with featured books, recent additions, and category browsing.
+
+### BookCard
+Reusable component displaying book information with add-to-cart and favorites functionality.
+
+### Navbar
+Responsive navigation with search, user authentication, and cart indicator.
+
+### Profile
+User dashboard for managing profile, orders, and favorites.
+
+---
+
+## 🔒 Environment Variables
+
+### Backend (.env)
+```
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/bookstore
+JWT_SECRET=your_jwt_secret_key
+PORT=5000
+NODE_ENV=development
+```
+
+### Frontend (.env)
+```
+VITE_API_URL=http://localhost:5000/api
+```
+
+---
+
+## 🧪 Testing
+
+```bash
+# Run tests
+npm test
+
+# Coverage report
+npm run test:coverage
+```
+
+---
+
+## 📱 Screenshots
+
+### Home Page
+- Interactive carousel with featured books
+- Category filters
+- Book recommendations
+
+### Shopping Experience
+- Book browsing with filters
+- Add to cart/favorites
+- Real-time cart updates
+
+### User Profile
+- Order history
+- Favorites collection
+- Account settings
+
+---
+
+## 🤝 Contributing
+
+We love contributions! Here's how you can help:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Code Style
+- Follow ESLint configuration
+- Use meaningful variable names
+- Add comments for complex logic
+- Keep components small and reusable
+
+---
+
+## 🐛 Known Issues & Roadmap
+
+### Current Issues
+- [ ] Payment gateway integration pending
+
+### Upcoming Features
+- 🎯 Advanced book recommendations using ML
+- 💬 Customer reviews and ratings
+- 📧 Email notifications
+- 📱 Mobile app (React Native)
+- 🔍 Advanced search with filters
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👥 Authors & Contributors
+
+- **Your Name** - Full Stack Developer
+
+---
+
+## 📞 Support
+
+Have questions? Let's connect!
+
+- 📧 Email: your.email@example.com
+- 💼 LinkedIn: [Your LinkedIn Profile]
+- 🐙 GitHub: [@yourprofile](https://github.com/yourprofile)
+
+---
+
+## 🙏 Acknowledgments
+
+- React community
+- Tailwind CSS team
+- MongoDB documentation
+- Contributors and testers
+
+---
+
+<div align="center">
+
+Made with ❤️ by [Your Name]
+
+⭐ If you found this helpful, please consider giving it a star!
+
+</div>
