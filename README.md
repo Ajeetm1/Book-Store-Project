@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![React](https://img.shields.io/badge/React-18.x-61DAFB?style=flat-square&logo=react)](https://reactjs.org/)
+[![React](https://img.shields.io/badge/React-19.x-61DAFB?style=flat-square&logo=react)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-16.x-339933?style=flat-square&logo=node.js)](https://nodejs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-5.x-47A248?style=flat-square&logo=mongodb)](https://www.mongodb.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
@@ -235,109 +235,6 @@ Content-Type: application/json
 }
 ```
 
-### Book Endpoints
-
-#### Get All Books
-```http
-GET /books?category=fiction&limit=10&page=1
-```
-
-#### Get Single Book
-```http
-GET /books/:id
-```
-
-#### Add Book (Admin)
-```http
-POST /books
-Authorization: Bearer <token>
-Content-Type: application/json
-
-{
-  "title": "The Great Gatsby",
-  "author": "F. Scott Fitzgerald",
-  "category": "Fiction",
-  "price": 299,
-  "description": "...",
-  "imageUrl": "..."
-}
-```
-
-#### Update Book
-```http
-PUT /books/:id
-Authorization: Bearer <token>
-```
-
-#### Delete Book
-```http
-DELETE /books/:id
-Authorization: Bearer <token>
-```
-
-### Cart Endpoints
-
-#### Add to Cart
-```http
-POST /cart/add
-Authorization: Bearer <token>
-```
-
-#### Get Cart
-```http
-GET /cart
-Authorization: Bearer <token>
-```
-
-#### Remove from Cart
-```http
-DELETE /cart/:bookId
-Authorization: Bearer <token>
-```
-
-### Order Endpoints
-
-#### Create Order
-```http
-POST /orders
-Authorization: Bearer <token>
-```
-
-#### Get Order History
-```http
-GET /orders/history
-Authorization: Bearer <token>
-```
-
-### Favorites Endpoints
-
-#### Add to Favorites
-```http
-POST /favorites/add
-Authorization: Bearer <token>
-```
-
-#### Get Favorites
-```http
-GET /favorites
-Authorization: Bearer <token>
-```
-
----
-
-## 🎨 Key Components
-
-### HomePage
-Interactive carousel with featured books, recent additions, and category browsing.
-
-### BookCard
-Reusable component displaying book information with add-to-cart and favorites functionality.
-
-### Navbar
-Responsive navigation with search, user authentication, and cart indicator.
-
-### Profile
-User dashboard for managing profile, orders, and favorites.
 
 ---
 
@@ -356,17 +253,6 @@ NODE_ENV=development
 VITE_API_URL=http://localhost:5000/api
 ```
 
----
-
-## 🧪 Testing
-
-```bash
-# Run tests
-npm test
-
-# Coverage report
-npm run test:coverage
-```
 
 ---
 
@@ -389,72 +275,21 @@ npm run test:coverage
 
 ---
 
-## 🤝 Contributing
-
-We love contributions! Here's how you can help:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Code Style
-- Follow ESLint configuration
-- Use meaningful variable names
-- Add comments for complex logic
-- Keep components small and reusable
-
----
-
-## 🐛 Known Issues & Roadmap
-
-### Current Issues
-- [ ] Payment gateway integration pending
-
-### Upcoming Features
-- 🎯 Advanced book recommendations using ML
-- 💬 Customer reviews and ratings
-- 📧 Email notifications
-- 📱 Mobile app (React Native)
-- 🔍 Advanced search with filters
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👥 Authors & Contributors
-
-- **Your Name** - Full Stack Developer
-
----
 
 ## 📞 Support
 
 Have questions? Let's connect!
 
-- 📧 Email: your.email@example.com
+- 📧 Email: mauryaajeet1999@gmail.com
 - 💼 LinkedIn: [Your LinkedIn Profile]
 - 🐙 GitHub: [@yourprofile](https://github.com/yourprofile)
 
----
-
-## 🙏 Acknowledgments
-
-- React community
-- Tailwind CSS team
-- MongoDB documentation
-- Contributors and testers
 
 ---
 
 <div align="center">
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by [Ajeet Maurya]
 
 ⭐ If you found this helpful, please consider giving it a star!
 
