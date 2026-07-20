@@ -44,7 +44,7 @@ export const TopBanner = () => {
     return () => clearInterval(timer);
   }, [offers.length]);
 
-  //get Current active offer object.
+
   const currnetOffer=offers[CurrentIndex]
   return (
     <div className="w-full bg-white text-center text-xs md:text-xl h-10">

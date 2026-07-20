@@ -24,10 +24,10 @@ const Carousel = ({ books }) => {
     <div>
      <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden border-y border-zinc-200/80 py-5 bg-gradient-to-r from-pink-100 via-purple-100 to-indigo-100 bg-[length:200%_200%] animate-gradient-slow shadow-sm">
   
-  {/* Ultra Smooth Fade Masking - Corners par clean blending ke liye */}
+
  <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden border-y border-purple-500/30 py-5 bg-white ">
   
-  {/* Ultra Smooth Fade Masking */}
+ 
   <div 
     className="w-full overflow-hidden"
     style={{
@@ -35,10 +35,10 @@ const Carousel = ({ books }) => {
       WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)'
     }}
   >
-    {/* Marquee Track - Isme humne 'flex' aur seamless alignment lagaya hai */}
+  
     <div className="flex w-max flex-nowrap animate-marquee hover:[animation-play-state:paused] gap-8 py-1">
       
-      {/* ==================== TRACK 1 ==================== */}
+    
       <div className="flex shrink-0 items-center gap-8 text-sm font-bold">
         
         {/* Card 1 */}
@@ -79,7 +79,7 @@ const Carousel = ({ books }) => {
 
       </div>
 
-      {/* ==================== TRACK 2 (EXACT SAME GAP & CARDS) ==================== */}
+     
       <div className="flex shrink-0 items-center gap-8 text-sm font-bold" aria-hidden="true">
         
         {/* Card 1 */}
@@ -167,7 +167,7 @@ const Carousel = ({ books }) => {
             );
           })}
 
-        {/* Buttons */}
+       
         <button
           onClick={prev}
           className="absolute left-4 text-white bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur"

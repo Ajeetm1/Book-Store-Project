@@ -115,7 +115,7 @@ const Navbar = () => {
         </button>
       </nav>
 
-      {/* Modern Overlay Mobile Navigation Menu */}
+    
       <div
         className={`fixed inset-0 bg-zinc-950/60 backdrop:blur-xl z-40 flex flex-col items-center justify-center gap-6 transition-all duration-500 md:hidden ${
           isMobileMenuOpen 
@@ -136,7 +136,7 @@ const Navbar = () => {
           </Link>
         ))}
 
-        {/* Mobile Auth Buttons inside menu */}
+
         {!isloggedIn && (
           <div className="flex flex-col items-center gap-4 w-full px-12 mt-4">
             <Link
